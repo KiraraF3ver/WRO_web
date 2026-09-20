@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="entry.title">Heritage Circuit — Vé Vào Cửa</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/components/ticket-card.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <a class="back-btn" href="rules.html"><span class="arrow">‹</span></a>
+    <span class="tag">Heritage Circuit</span>
+  </div>
+
+  <div class="header centered">
+    <div class="eyebrow" data-i18n="entry.eyebrow">Heritage Circuit</div>
+    <h1 data-i18n="entry.h1">Vé Vào Cửa Của Bạn</h1>
+    <div class="viet" data-i18n="entry.viet">Xuất trình vé này tại cửa vào toà nhà</div>
+  </div>
+
+  <div class="ticket-wrap">
+    <div class="ticket">
+      <div class="ticket-main">
+        <div class="ticket-brand">Heritage Circuit</div>
+        <div class="ticket-title" data-i18n="entry.ticketTitle">Vé Vào Toà Nhà</div>
+        <div class="ticket-admit" data-i18n="entry.admit">Vào Cửa Một Người</div>
+
+        <div class="ticket-rule"></div>
+
+        <div class="ticket-field">
+          <div class="ticket-field-label" data-i18n="entry.guestLabel">Khách</div>
+          <div class="ticket-field-value" id="ticket-user">user</div>
+        </div>
+
+        <div class="ticket-field">
+          <div class="ticket-field-label" data-i18n="entry.idLabel">Mã Vé</div>
+          <div class="ticket-field-value mono-id" id="ticket-id">#0000</div>
+        </div>
+      </div>
+
+      <div class="perforation"></div>
+
+      <div class="ticket-stub">
+        <div class="stub-caption" data-i18n="entry.scan">Quét mã tại lối vào</div>
+        <div class="qr-box"><img src="images/qr-entry.png" alt="Entry ticket QR code" class="qr-img"></div>
+        <div class="stub-id" id="ticket-id-stub">#0000</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 20px; text-align:center;">
+    <a class="btn btn-dark" href="store.html" style="display:inline-block; width:auto; padding:14px 36px;" data-i18n="entry.continue">Tiếp Tục Đến Cửa Hàng</a>
+  </div>
+
+  <div class="footer-stamp" data-i18n="common.footerMachine">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/entry-ticket.js"></script>
+</body>
+</html>

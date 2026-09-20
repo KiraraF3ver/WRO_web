@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="pNhat.title">Heritage Circuit — Nhật Bình Phượng Hoàng</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/product.css">
+<style>
+  /* Per-product accent — the only thing that differs structurally between the three product pages. */
+  :root{
+    --product-accent:#a91f2e;
+    --product-hero-bg:#7c1420;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HOME VIEW -->
+  <div class="view view-home" id="view-home">
+    <div class="topbar">
+      <a class="back-btn" href="store.html"><span class="arrow">‹</span></a>
+      <span class="tag">Heritage Circuit</span>
+    </div>
+    <div class="spine"></div>
+    <div class="hero">
+      <h1>NHẬT BÌNH<br>PHƯỢNG HOÀNG</h1>
+      <div class="viet" data-i18n="pNhat.heroViet">Áo Nhật Bình gấm đỏ thêu phượng</div>
+      <p class="sub" data-i18n="pNhat.heroSub">A majestic reproduction of the Nguyễn Dynasty court robe, hand-embroidered with phoenix motifs on premium silk brocade.</p>
+    </div>
+
+    <div class="nav-list">
+      <div class="nav-hint" data-i18n="product.tapHint">Chạm vào một mục để mở</div>
+
+      <button class="nav-item" onclick="openPage('info')">
+        <div class="nav-thumb"><img src="images/nhat_binh_hero.png" alt="Nhat Binh"></div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.info">Thông Tin</div>
+          <div class="nav-preview" data-i18n="pNhat.navInfo">Triều phục nhà Nguyễn · lịch sử</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('stock')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <line x1="8" y1="10" x2="40" y2="10" stroke="#232735" stroke-width="2"/>
+            <line x1="12" y1="10" x2="12" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <line x1="36" y1="10" x2="36" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <path d="M15 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#a91f2e"/>
+            <path d="M25 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#1f3a5c"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.stock">Tồn Kho</div>
+          <div class="nav-preview" data-i18n="pNhat.navStock">18 sản phẩm · may theo đơn</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('material')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="weaveNav" width="6" height="6" patternUnits="userSpaceOnUse">
+                <rect width="6" height="6" fill="#e9dfc6"/>
+                <path d="M0 6 L6 0" stroke="#a91f2e" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect x="6" y="6" width="36" height="36" fill="url(#weaveNav)"/>
+            <rect x="6" y="6" width="36" height="6" fill="#c9a24d" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.material">Chất Liệu</div>
+          <div class="nav-preview" data-i18n="pNhat.navMaterial">Gấm lụa · chỉ kim tuyến</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+    </div>
+
+    <div class="footer-stamp" data-i18n="common.footerMachine">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+  </div>
+
+  <!-- INFO -->
+  <div class="view view-detail" id="view-info">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagHeritage">Di Sản</span>
+    </div>
+    <div class="detail-hero-media">
+      <img src="images/nhat_binh_hero.png" alt="Model wearing a red Nhat Binh robe with phoenix roundels and a blue khan vanh headdress">
+    </div>
+    <div class="detail-body">
+      <div class="detail-title" data-i18n="product.info">Thông Tin</div>
+      <ul class="fact-list">
+        <li data-i18n="pNhat.li1">Nhật Bình was the ceremonial court dress of queens, princesses, and high-ranking women of the Nguyễn Dynasty, worn from the 19th into the early 20th century.</li>
+        <li data-i18n="pNhat.li2">The name comes from its square, front-facing collar — cổ vuông — which sits flat like the character for "sun" (nhật) when viewed head-on.</li>
+        <li data-i18n="pNhat.li3">Colour marked rank at court: bright yellow was reserved for the queen, red for princesses and senior consorts, with purple and blue worn further down the hierarchy.</li>
+        <li data-i18n="pNhat.li4">The roundels on the chest and back are embroidered with phượng, the phoenix — the female counterpart to the dragon roundels reserved for the emperor's robe.</li>
+        <li data-i18n="pNhat.li5">The rounded headdress seen with it, khăn vành, is wound from a single long strip of fabric, its brim sloping gently at the back like a crescent moon.</li>
+        <li data-i18n="pNhat.li6">This reproduction keeps the hand-embroidered collar and phoenix roundels, tailored for modern brides and ceremony wear rather than daily palace duty.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STOCK -->
+  <div class="view view-detail" id="view-stock">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagAvailability">Tồn Kho</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.stock">Tồn Kho</div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.onHand">Có Sẵn</div>
+        <div class="stock-row">
+          <span class="stock-dot"></span>
+          <span class="stock-count">18</span>
+          <span style="font-size:13px;color:rgba(42,47,54,0.6);" data-i18n="pNhat.onHandText">sản phẩm hoàn thiện tại xưởng thêu Huế</span>
+        </div>
+        <p style="margin-bottom:0;" data-i18n="pNhat.stockNote">Mỗi cổ áo được thêu tay theo đơn, nên thời gian thực hiện khoảng 3–5 tuần sau khi chốt kích cỡ.</p>
+      </div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.bySize">Theo Kích Cỡ</div>
+        <div class="size-stock" style="margin-top:0;">
+          <span class="size-chip low" data-i18n="pNhat.chipS">S · còn 2</span>
+          <span class="size-chip">M</span>
+          <span class="size-chip">L</span>
+          <span class="size-chip low" data-i18n="pNhat.chipXL">XL · còn 3</span>
+        </div>
+      </div>
+
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.refChart">Bảng Tham Chiếu</div>
+        <table class="size-table">
+          <tr><th data-i18n="product.thSize">Cỡ</th><th data-i18n="product.thChest">Ngực</th><th data-i18n="product.thLength">Dài</th><th data-i18n="product.thSleeve">Tay áo</th></tr>
+          <tr><td>S</td><td>38"</td><td>25"</td><td>24.5"</td></tr>
+          <tr><td>M</td><td>40"</td><td>25.75"</td><td>25"</td></tr>
+          <tr><td>L</td><td>42"</td><td>26.5"</td><td>25.5"</td></tr>
+          <tr><td>XL</td><td>44"</td><td>27.25"</td><td>26"</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATERIAL -->
+  <div class="view view-detail" id="view-material">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagMaterial">Chất Liệu</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.material">Chất Liệu</div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.fabric">Vải</div>
+        <img class="mats-img" src="images/silk.png">
+        <p style="margin-bottom:0;" data-i18n="pNhat.fabricText">Gấm lụa cho thân áo, lót sau cổ bằng vải pha bông-lụa dệt dày để giữ phom.</p>
+      </div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="pNhat.embLabel">Thêu</div>
+        <p data-i18n="pNhat.embText">The collar and roundels are hand-embroidered in gold-wrapped thread and silk floss, following the phượng (phoenix) motif traditional to women's court dress.</p>
+        <div class="swatch-legend">
+          <div><span class="swatch-dot" style="background:#a91f2e;"></span><span data-i18n="pNhat.sw1">Gấm đỏ hoàng gia</span></div>
+          <div><span class="swatch-dot" style="background:#1f3a5c;"></span><span data-i18n="pNhat.sw2">Viền cổ màu chàm</span></div>
+          <div><span class="swatch-dot" style="background:#c9a24d;"></span><span data-i18n="pNhat.sw3">Chỉ kim tuyến</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/product.js"></script>
+</body>
+</html>

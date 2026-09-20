@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="store.title">Heritage Circuit — Bộ Sưu Tập</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/store.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="brand-mini">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 44 C24 30 16 26 10 22 C16 24 22 28 24 34 C26 28 32 24 38 22 C32 26 24 30 24 44 Z" fill="#c9a24d"/>
+        <path d="M24 34 C24 24 18 18 12 14 C18 15 24 20 24 26 C24 20 30 15 36 14 C30 18 24 24 24 34 Z" fill="#f5efe0" opacity="0.7"/>
+      </svg>
+      <span>Heritage Circuit</span>
+    </div>
+
+    <div class="topbar-actions" style="display:flex; align-items:center; gap:10px;">
+      <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
+        <button type="button" class="lang-opt" data-lang="vi">VIE</button>
+        <button type="button" class="lang-opt" data-lang="en">EN</button>
+      </div>
+
+      <div class="menu-wrap">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5" width="18" height="2.4" rx="1" fill="#f5efe0"/>
+            <rect x="3" y="11" width="18" height="2.4" rx="1" fill="#f5efe0"/>
+            <rect x="3" y="17" width="18" height="2.4" rx="1" fill="#f5efe0"/>
+          </svg>
+        </button>
+        <div class="menu-dropdown" id="menu-dropdown">
+          <a href="queue.html" data-i18n="store.menuQueue">🥽 Hàng chờ Trải nghiệm</a>
+          <a href="entry-ticket.html" data-i18n="store.menuTicket">🎟️ Vé vào cửa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="eyebrow" data-i18n="store.eyebrow">Di Sản, Cách Tân</div>
+    <h1 data-i18n="store.h1">Bộ Sưu Tập</h1>
+    <p data-i18n="store.intro">Ba trang phục được phục chế, cách tân bởi các thợ dệt truyền thống lâu nghề hợp tác cùng Heritage Circuit.</p>
+  </div>
+
+  <div class="slider-wrap">
+    <div class="slider" id="slider">
+      <div class="slide active" data-index="0">
+        <img src="images/nhat_binh_hero.png" alt="Nhat Binh Phuong Hoang">
+        <div class="slide-scrim">
+          <div class="name">Nhật Bình</div>
+          <div class="category" data-i18n="store.catNhatBinh">Triều phục nhà Nguyễn</div>
+        </div>
+      </div>
+      <div class="slide" data-index="1">
+        <img src="images/giao_linh_hero.png" alt="Giao Linh Luc Truc">
+        <div class="slide-scrim">
+          <div class="name">Giao Lĩnh</div>
+          <div class="category" data-i18n="store.catGiaoLinh">Áo giao lĩnh cổ chéo</div>
+        </div>
+      </div>
+      <div class="slide" data-index="2">
+        <img src="images/ngu_than_hero.png" alt="Ngu Than Van Lam">
+        <div class="slide-scrim">
+          <div class="name">Ngũ Thân</div>
+          <div class="category" data-i18n="store.catNguThan">Áo ngũ thân năm tà</div>
+        </div>
+      </div>
+
+      <button class="slide-arrow prev" onclick="changeSlide(-1)">‹</button>
+      <button class="slide-arrow next" onclick="changeSlide(1)">›</button>
+    </div>
+
+    <div class="dots" id="dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
+
+  <div class="collection">
+
+    <div class="collection-row">
+
+      <a class="costume-card" href="product-nhat-binh.html">
+        <div class="costume-thumb"><img src="images/nhat_binh_hero.png" alt="Nhat Binh"></div>
+        <div class="costume-info">
+          <div class="costume-name">Nhật Bình</div>
+          <div class="costume-tag" data-i18n="store.catNhatBinh">Triều phục nhà Nguyễn</div>
+        </div>
+      </a>
+
+      <a class="costume-card" href="product-giao-linh.html">
+        <div class="costume-thumb"><img src="images/giao_linh_hero.png" alt="Giao Linh"></div>
+        <div class="costume-info">
+          <div class="costume-name">Giao Lĩnh</div>
+          <div class="costume-tag" data-i18n="store.catGiaoLinh">Áo giao lĩnh cổ chéo</div>
+        </div>
+      </a>
+
+      <a class="costume-card" href="product-ngu-than.html">
+        <div class="costume-thumb"><img src="images/ngu_than_hero.png" alt="Ngu Than"></div>
+        <div class="costume-info">
+          <div class="costume-name">Ngũ Thân</div>
+          <div class="costume-tag" data-i18n="store.catNguThan">Áo ngũ thân năm tà</div>
+        </div>
+      </a>
+
+      <p class="collection-sub" data-i18n="store.sub">Bấm vào thẻ để truy cập trang.</p>
+
+    </div>
+  </div>
+
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...args)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="doVaTnK_KXex0gC5sfOah";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
+  <div class="footer-stamp" data-i18n="store.footer">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/store.js"></script>
+</body>
+</html>

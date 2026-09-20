@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="pGiao.title">Heritage Circuit — Giao Lĩnh Lục Trúc</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/product.css">
+<style>
+  :root{
+    --product-accent:#8fae7f;
+    --product-hero-bg:#2e3d27;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="view view-home" id="view-home">
+    <div class="topbar">
+      <a class="back-btn" href="store.html"><span class="arrow">‹</span></a>
+      <span class="tag">Heritage Circuit</span>
+    </div>
+    <div class="spine"></div>
+    <div class="hero">
+      <h1>GIAO LĨNH<br>LỤC TRÚC</h1>
+      <div class="viet" data-i18n="pGiao.heroViet">Áo giao lĩnh lụa xanh lá, dáng trúc biếc</div>
+      <p class="sub" data-i18n="pGiao.heroSub">A cross-collar robe dyed with green tea leaf, cut loose for slow afternoons in the bamboo grove.</p>
+    </div>
+
+    <div class="nav-list">
+      <div class="nav-hint" data-i18n="product.tapHint">Chạm vào một mục để mở</div>
+
+      <button class="nav-item" onclick="openPage('info')">
+        <div class="nav-thumb"><img src="images/giao_linh_hero.png" alt="Giao Linh"></div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.info">Thông Tin</div>
+          <div class="nav-preview" data-i18n="pGiao.navInfo">Áo giao lĩnh · lịch sử</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('stock')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <line x1="8" y1="10" x2="40" y2="10" stroke="#232735" stroke-width="2"/>
+            <line x1="12" y1="10" x2="12" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <line x1="36" y1="10" x2="36" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <path d="M15 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#8fae7f"/>
+            <path d="M25 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#2e3d27"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.stock">Tồn Kho</div>
+          <div class="nav-preview" data-i18n="pGiao.navStock">24 sản phẩm · nhuộm theo mẻ</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('material')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="weaveNav" width="6" height="6" patternUnits="userSpaceOnUse">
+                <rect width="6" height="6" fill="#e9dfc6"/>
+                <path d="M0 6 L6 0" stroke="#8fae7f" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect x="6" y="6" width="36" height="36" fill="url(#weaveNav)"/>
+            <rect x="6" y="6" width="36" height="6" fill="#c9a24d" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.material">Chất Liệu</div>
+          <div class="nav-preview" data-i18n="pGiao.navMaterial">Lụa · nhuộm lá trà</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+    </div>
+
+    <div class="footer-stamp" data-i18n="common.footerMachine">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+  </div>
+
+  <div class="view view-detail" id="view-info">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagHeritage">Di Sản</span>
+    </div>
+    <div class="detail-hero-media">
+      <img src="images/giao_linh_hero.png" alt="Model wearing a sage green cross-collar giao linh robe in a bamboo grove">
+    </div>
+    <div class="detail-body">
+      <div class="detail-title" data-i18n="product.info">Thông Tin</div>
+      <ul class="fact-list">
+        <li data-i18n="pGiao.li1">Giao lĩnh (交領, "crossed collar") is one of the oldest recorded Vietnamese garment forms, worn from at least the Lý–Trần dynasties onward by both men and women.</li>
+        <li data-i18n="pGiao.li2">Its defining feature is the collar itself: the two front panels cross over the chest in a V, closing left-over-right, then tied with a sash rather than buttoned.</li>
+        <li data-i18n="pGiao.li3">Everyday versions used light, unlined sleeves, while ceremonial ones used fuller, weighted sleeves like this one, so the fabric falls in soft folds when the arms are still.</li>
+        <li data-i18n="pGiao.li4">Because the robe opens at the front, a pale underlayer was traditionally worn beneath it, visible at the collar and hem — the same soft two-tone look kept in this reproduction.</li>
+        <li data-i18n="pGiao.li5">The cross-collar robe form predates and directly influenced the Japanese kimono and Korean hanbok, all descending from a shared cross-collar tradition across East and Southeast Asia.</li>
+        <li data-i18n="pGiao.li6">This piece lightens the traditional fabric weight and dyes it in green tea leaf, suited to outdoor portraits and daytime ceremony rather than formal court wear.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="view view-detail" id="view-stock">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagAvailability">Tồn Kho</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.stock">Tồn Kho</div>
+
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.onHand">Có Sẵn</div>
+        <div class="stock-row">
+          <span class="stock-dot"></span>
+          <span class="stock-count">24</span>
+          <span style="font-size:13px;color:rgba(42,47,54,0.6);" data-i18n="pGiao.onHandText">sản phẩm từ mẻ nhuộm lá trà hiện tại</span>
+        </div>
+        <p style="margin-bottom:0;" data-i18n="pGiao.stockNote">Độ đậm màu thay đổi đôi chút giữa các mẻ, vì sắc màu đến trực tiếp từ lá trà dùng trong tuần đó.</p>
+      </div>
+
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.bySize">Theo Kích Cỡ</div>
+        <div class="size-stock" style="margin-top:0;">
+          <span class="size-chip low" data-i18n="pGiao.chipS">S · còn 4</span>
+          <span class="size-chip">M</span>
+          <span class="size-chip">L</span>
+          <span class="size-chip low" data-i18n="pGiao.chipXL">XL · còn 2</span>
+        </div>
+      </div>
+
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.refChart">Bảng Tham Chiếu</div>
+        <table class="size-table">
+          <tr><th data-i18n="product.thSize">Cỡ</th><th data-i18n="product.thChest">Ngực</th><th data-i18n="product.thLength">Dài</th><th data-i18n="product.thSleeve">Tay áo</th></tr>
+          <tr><td>S</td><td>36"</td><td>50"</td><td>27"</td></tr>
+          <tr><td>M</td><td>38"</td><td>51"</td><td>27.5"</td></tr>
+          <tr><td>L</td><td>40"</td><td>52"</td><td>28"</td></tr>
+          <tr><td>XL</td><td>42"</td><td>53"</td><td>28.5"</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="view view-detail" id="view-material">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagMaterial">Chất Liệu</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.material">Chất Liệu</div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.fabric">Vải</div>
+        <img class="mats-img" src="images/silk.png">
+        <p style="margin-bottom:0;" data-i18n="pGiao.fabricText">Lụa tơ tằm mềm cho áo ngoài, phối cùng lớp lụa lót màu ngà nhẹ hơn, lộ ra ở cổ, cửa tay và gấu áo.</p>
+      </div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="pGiao.dyeLabel">Nhuộm &amp; viền</div>
+        <p data-i18n="pGiao.dyeText">Colour comes from a green tea leaf dye bath, giving the sage tone its slightly warm, muted cast rather than a flat synthetic green.</p>
+
+        <div class="swatch-legend">
+          <div><span class="swatch-dot" style="background:#8fae7f;"></span><span data-i18n="pGiao.sw1">Xanh trà trầm</span></div>
+          <div><span class="swatch-dot" style="background:#ecdfa5;"></span><span data-i18n="pGiao.sw2">Lớp lót màu ngà</span></div>
+          <div><span class="swatch-dot" style="background:#c9a24d;"></span><span data-i18n="pGiao.sw3">Đai màu trúc vàng</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/product.js"></script>
+</body>
+</html>

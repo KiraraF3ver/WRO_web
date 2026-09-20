@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="login.title">Heritage Circuit — Đăng Nhập</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/login.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="lang-toggle floating" role="group" aria-label="Language / Ngôn ngữ">
+    <button type="button" class="lang-opt" data-lang="vi">VIE</button>
+    <button type="button" class="lang-opt" data-lang="en">EN</button>
+  </div>
+
+  <div class="brand">
+    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 44 C24 30 16 26 10 22 C16 24 22 28 24 34 C26 28 32 24 38 22 C32 26 24 30 24 44 Z" fill="#c9a24d"/>
+      <path d="M24 34 C24 24 18 18 12 14 C18 15 24 20 24 26 C24 20 30 15 36 14 C30 18 24 24 24 34 Z" fill="#232735" opacity="0.7"/>
+    </svg>
+    <div class="word">Heritage Circuit</div>
+    <h1 data-i18n="login.h1">Chào Mừng Trở Lại</h1>
+    <p class="quote" data-i18n="login.quote">“Di sản không phải để cất giữ, mà để mặc lên người.”</p>
+  </div>
+
+  <form class="form-wrap" onsubmit="submitLogin(event)">
+    <label class="field-label" data-i18n="login.emailLabel">Email hoặc tên đăng nhập</label>
+    <input class="field" type="text" placeholder="Email" data-i18n-placeholder="login.emailPlaceholder">
+
+    <label class="field-label" data-i18n="login.passwordLabel">Mật khẩu</label>
+    <input class="field" type="password" placeholder="Mật khẩu" data-i18n-placeholder="login.passwordPlaceholder">
+
+    <div class="row-between">
+      <label class="remember"><input type="checkbox"> <span data-i18n="login.remember">Ghi nhớ đăng nhập</span></label>
+      <a class="forgot" onclick="return false;" data-i18n="login.forgot">Quên mật khẩu?</a>
+    </div>
+
+    <button class="btn btn-dark" id="login-btn" type="submit" data-i18n="login.submit">Đăng Nhập</button>
+
+    <div class="divider" data-i18n="login.or">hoặc</div>
+
+    <div class="alt-actions">
+      <span data-i18n="login.newHere">Bạn mới đến?</span> <a href="rules.html" data-i18n="login.createAccount">Tạo tài khoản</a>
+    </div>
+  </form>
+
+  <div class="footer-stamp" data-i18n="login.footer">HERITAGE CIRCUIT — CỔ PHỤC VIỆT, MAY MỚI TỪNG ĐƯỜNG KIM</div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/login.js"></script>
+</body>
+</html>

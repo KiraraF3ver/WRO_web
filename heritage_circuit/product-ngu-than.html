@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="pNgu.title">Heritage Circuit — Ngũ Thân Vân Lam</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/product.css">
+<style>
+  :root{
+    --product-accent:#8fa0b3;
+    --product-hero-bg:#3f4b5c;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="view view-home" id="view-home">
+    <div class="topbar">
+      <a class="back-btn" href="store.html"><span class="arrow">‹</span></a>
+      <span class="tag">Heritage Circuit</span>
+    </div>
+    <div class="spine"></div>
+    <div class="hero">
+      <h1>NGŨ THÂN<br>VÂN LAM</h1>
+      <div class="viet" data-i18n="pNgu.heroViet">Áo ngũ thân voan lam, phối chân váy kem</div>
+      <p class="sub" data-i18n="pNgu.heroSub">A sheer organza five-panel robe in dusty blue, worn over an ivory underskirt in the old fuller shape.</p>
+    </div>
+
+    <div class="nav-list">
+      <div class="nav-hint" data-i18n="product.tapHint">Chạm vào một mục để mở</div>
+
+      <button class="nav-item" onclick="openPage('info')">
+        <div class="nav-thumb"><img src="images/ngu_than_hero.png" alt="Ngu Than"></div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.info">Thông Tin</div>
+          <div class="nav-preview" data-i18n="pNgu.navInfo">Áo ngũ thân · lịch sử</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('stock')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <line x1="8" y1="10" x2="40" y2="10" stroke="#232735" stroke-width="2"/>
+            <line x1="12" y1="10" x2="12" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <line x1="36" y1="10" x2="36" y2="40" stroke="#232735" stroke-width="1.3"/>
+            <path d="M15 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#8fa0b3"/>
+            <path d="M25 13 v11 l3.5 3.5 h5.5 l3.5 -3.5 v-11 z" fill="#3f4b5c"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.stock">Tồn Kho</div>
+          <div class="nav-preview" data-i18n="pNgu.navStock">15 sản phẩm · may theo đơn</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+      <button class="nav-item" onclick="openPage('material')">
+        <div class="nav-thumb">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="weaveNav" width="6" height="6" patternUnits="userSpaceOnUse">
+                <rect width="6" height="6" fill="#e9dfc6"/>
+                <path d="M0 6 L6 0" stroke="#8fa0b3" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect x="6" y="6" width="36" height="36" fill="url(#weaveNav)"/>
+            <rect x="6" y="6" width="36" height="6" fill="#c9a24d" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="nav-text">
+          <div class="nav-title" data-i18n="product.material">Chất Liệu</div>
+          <div class="nav-preview" data-i18n="pNgu.navMaterial">Voan lụa · viền ngọc trai</div>
+        </div>
+        <div class="nav-chevron">›</div>
+      </button>
+
+    </div>
+
+    <div class="footer-stamp" data-i18n="common.footerMachine">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+  </div>
+
+  <div class="view view-detail" id="view-info">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagHeritage">Di Sản</span>
+    </div>
+    <div class="detail-hero-media">
+      <img src="images/ngu_than_hero.png" alt="Model wearing a sheer dusty blue ngu than robe over a cream underskirt">
+    </div>
+    <div class="detail-body">
+      <div class="detail-title" data-i18n="product.info">Thông Tin</div>
+      <ul class="fact-list">
+        <li data-i18n="pNgu.li1">Áo ngũ thân, "the five-paneled robe," was the standard formal outer garment for both men and women in Vietnam from the 18th century onward, and the direct ancestor of the modern áo dài.</li>
+        <li data-i18n="pNgu.li2">The five panels carried a family meaning: four main panels stood for the wearer's parents, and a fifth, smaller inner panel stood for the wearer.</li>
+        <li data-i18n="pNgu.li3">It was traditionally worn with a standing mandarin collar, cổ đứng, closed by cloth-covered buttons running diagonally from the neck to the underarm.</li>
+        <li data-i18n="pNgu.li4">An inner layer in a contrasting colour — like the cream underskirt shown here — was meant to show through at the hem and side slits, which is why the outer fabric was historically kept sheer or lightweight.</li>
+        <li data-i18n="pNgu.li5">The garment narrowed into the modern two-panel áo dài in the 1930s; this reproduction restores the older, fuller five-panel silhouette.</li>
+        <li data-i18n="pNgu.li6">The pearl hairpins and chest tassel echo the small ornaments once pinned at the collar for formal occasions, reimagined here in pearl rather than metal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="view view-detail" id="view-stock">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagAvailability">Tồn Kho</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.stock">Tồn Kho</div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.onHand">Có Sẵn</div>
+        <div class="stock-row">
+          <span class="stock-dot"></span>
+          <span class="stock-count">15</span>
+          <span style="font-size:13px;color:rgba(42,47,54,0.6);" data-i18n="pNgu.onHandText">sản phẩm hoàn thiện tại xưởng may Hội An</span>
+        </div>
+        <p style="margin-bottom:0;" data-i18n="pNgu.stockNote">Voan lụa mỏng được cắt và hoàn thiện thủ công, nên mỗi sản phẩm mất nhiều thời gian hơn vải lót thông thường.</p>
+      </div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.bySize">Theo Kích Cỡ</div>
+        <div class="size-stock" style="margin-top:0;">
+          <span class="size-chip low" data-i18n="pNgu.chipS">S · còn 1</span>
+          <span class="size-chip">M</span>
+          <span class="size-chip">L</span>
+          <span class="size-chip low" data-i18n="pNgu.chipXL">XL · còn 2</span>
+        </div>
+      </div>
+
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.refChart">Bảng Tham Chiếu</div>
+        <table class="size-table">
+          <tr><th data-i18n="product.thSize">Cỡ</th><th data-i18n="product.thChest">Ngực</th><th data-i18n="product.thLength">Dài</th><th data-i18n="product.thSleeve">Tay áo</th></tr>
+          <tr><td>S</td><td>34"</td><td>54"</td><td>23"</td></tr>
+          <tr><td>M</td><td>36"</td><td>55"</td><td>23.5"</td></tr>
+          <tr><td>L</td><td>38"</td><td>56"</td><td>24"</td></tr>
+          <tr><td>XL</td><td>40"</td><td>57"</td><td>24.5"</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="view view-detail" id="view-material">
+    <div class="detail-topbar">
+      <button class="back-btn" onclick="closePage()"><span class="arrow">‹</span> <span data-i18n="product.back">Quay lại</span></button>
+      <span class="tag" data-i18n="product.tagMaterial">Chất Liệu</span>
+    </div>
+    <div class="detail-body" style="padding-top:26px;">
+      <div class="detail-title" data-i18n="product.material">Chất Liệu</div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="product.fabric">Vải</div>
+        <img class="mats-img" src="images/silk.png">
+        <p style="margin-bottom:0;" data-i18n="pNgu.fabricText">Áo ngoài bằng voan lụa màu lam sương, đủ mỏng để lộ chân váy bên trong, khoác ngoài chân váy gấm lụa màu kem có hoa văn dệt riêng.</p>
+      </div>
+      <div class="text-card card card-brass-top">
+        <div class="text-card-label" data-i18n="pNgu.trimLabel">Viền &amp; phụ kiện</div>
+        <p data-i18n="pNgu.trimText">The standing collar is interfaced to hold its shape under sheer fabric, closed with cloth-covered buttons, and finished with a hand-strung pearl floral tassel at the chest.</p>
+        <div class="swatch-legend">
+          <div><span class="swatch-dot" style="background:#8fa0b3;"></span><span data-i18n="pNgu.sw1">Voan lam sương</span></div>
+          <div><span class="swatch-dot" style="background:#e9dfc6;"></span><span data-i18n="pNgu.sw2">Chân váy màu kem</span></div>
+          <div><span class="swatch-dot" style="background:#c9a24d;"></span><span data-i18n="pNgu.sw3">Viền ngọc trai</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/product.js"></script>
+</body>
+</html>

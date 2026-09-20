@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title data-i18n-title="queue.title">Heritage Circuit — Hàng Chờ</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/pages/queue.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <a class="back-btn" href="store.html"><span class="arrow">‹</span></a>
+    <h1 data-i18n="queue.topTitle">Hàng Chờ Trải Nghiệm VR</h1>
+    <span class="tag">Heritage Circuit</span>
+  </div>
+
+    <!-- VR EXPERIENCE INTRO -->
+  <div class="vr-intro">
+    <h2 class="vr-title" data-i18n="queue.vrTitle">Bước Vào Trải Nghiệm</h2>
+    <p class="vr-text" data-i18n="queue.vrText">
+      Bước qua cánh cửa thời gian với trải nghiệm thực tế ảo (VR) đa giác quan đỉnh cao,
+      nơi bạn có thể tự do dạo bước qua các di tích lịch sử cổ kính, hòa mình vào đời sống thường nhật thời
+      cổ đại và chiêm ngưỡng những bộ y phục lộng lẫy được tái hiện tinh xảo. Đặc biệt, hệ thống mô phỏng giác quan
+      tiên tiến sẽ đánh thức mọi cảm xúc của bạn qua từng làn gió thoảng, sự thay đổi chân thực của nhiệt độ cùng những
+       hương thơm phảng phất trong không gian, mang lại một hành trình nhập vai vượt thời gian sống động và chân thật nhất.
+    </p>
+    <div class="vr-image">
+      <img src="images/vrImage_Unity.png" alt="VR experience preview">
+    </div>
+  </div>
+
+    <!-- Queue Heading -->
+  <div class="header">
+    <h1 data-i18n="queue.h1">Tham Gia Trải Nghiệm</h1>
+    <div class="viet" data-i18n="queue.viet">Đăng ký, chọn quầy, nhận vé tham gia trải nghiệm thực tế ảo đắm chìm</div>
+  </div>
+
+  <!-- STEP 1: register -->
+  <div class="step-wrap">
+    <div class="step-label"><span class="step-num">1</span> <span data-i18n="queue.step1">Đăng Ký</span></div>
+    <div class="register-card card card-brass-left" id="register-card">
+      <p data-i18n="queue.registerText">Đăng ký để tham gia hàng chờ quầy.</p>
+      <button class="btn btn-dark" onclick="registerQueue()" data-i18n="queue.registerBtn">Đăng Ký Hàng Chờ</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: choose an empty booth -->
+  <div class="booth-section" id="booth-section">
+    <div class="step-wrap">
+      <div class="step-label"><span class="step-num">2</span> <span data-i18n="queue.step2">Chọn Quầy</span></div>
+      <div class="booth-header">
+        <p data-i18n="queue.boothText">Hãy bấm chọn một quầy trống.</p>
+      </div>
+      <div class="legend">
+        <div><span class="legend-dot" style="background:var(--available);"></span><span data-i18n="queue.legendEmpty">Trống</span></div>
+        <div><span class="legend-dot" style="background:var(--badge);"></span><span data-i18n="queue.legendOccupied">Đã có người</span></div>
+      </div>
+      <div class="booth-grid" id="booth-grid"><!-- populated by js/pages/queue.js --></div>
+    </div>
+  </div>
+
+  <!-- STEP 3: continue to outfit selection + ticket generation -->
+  <div class="generate-section" id="generate-section">
+    <div class="step-label" style="justify-content:center;"><span class="step-num">3</span> <span data-i18n="queue.step3">Chọn Trang Phục &amp; Tạo Vé</span></div>
+    <p data-i18n="queue.step3Text">Chọn trang phục cho lượt trải nghiệm tại quầy này, rồi tạo vé của bạn.</p>
+    <a class="btn btn-dark" href="generate-ticket.html" style="display:inline-block; width:auto; padding:14px 32px;" onclick="proceedToGenerate()" data-i18n="queue.continue">Tiếp Tục</a>
+  </div>
+
+  <div class="footer-stamp" data-i18n="common.footerMachine">HERITAGE CIRCUIT — THỔI HỒN MÁY MÓC, THẮP SÁNG DI SẢN</div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/pages/queue.js"></script>
+</body>
+</html>
