@@ -1,0 +1,69 @@
+/* TICKET CARD component — the perforated ticket-with-stub visual.
+   Shared by entry-ticket.html (building entry) and generate-ticket.html
+   (the merged outfit + booth ticket), since both need the identical card,
+   just filled with different data. Page-specific text/labels live in the
+   HTML, not here. */
+
+.ticket-wrap{ display:flex; justify-content:center; padding:34px 24px 40px; }
+
+.ticket{
+  position:relative;
+  width:100%;
+  max-width:340px;
+  background:var(--card);
+  border:1px solid rgba(42,47,54,0.16);
+  border-radius:14px;
+  box-shadow:0 18px 40px rgba(35,39,53,0.28);
+  overflow:hidden;
+}
+
+.ticket-main{ padding:26px 26px 22px; text-align:center; }
+.ticket-brand{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:2.5px;
+  color:var(--brass); text-transform:uppercase; margin-bottom:6px;
+}
+.ticket-title{ font-family:var(--font-display); font-weight:700; font-size:24px; color:var(--ink); }
+.ticket-admit{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px;
+  color:rgba(42,47,54,0.5); text-transform:uppercase; margin-top:4px;
+}
+
+.ticket-rule{ width:60px; height:2px; background:var(--brass); margin:16px auto; }
+
+.ticket-field{ margin-bottom:14px; }
+.ticket-field:last-child{ margin-bottom:0; }
+.ticket-field-label{
+  font-family:var(--font-mono); font-size:9.5px; letter-spacing:1.5px;
+  color:var(--badge); text-transform:uppercase; margin-bottom:4px;
+}
+.ticket-field-value{ font-family:var(--font-display); font-weight:700; font-size:21px; color:var(--ink); }
+.ticket-field-value.mono-id{ font-family:var(--font-mono); font-size:24px; letter-spacing:3px; color:var(--ink); }
+
+/* perforation */
+.perforation{
+  position:relative; height:0;
+  border-top:2px dashed rgba(42,47,54,0.3);
+}
+.perforation::before, .perforation::after{
+  content:""; position:absolute; top:50%; transform:translateY(-50%);
+  width:24px; height:24px; background:#0b0e12; border-radius:50%;
+}
+.perforation::before{ left:-12px; }
+.perforation::after{ right:-12px; }
+
+/* stub */
+.ticket-stub{ padding:18px 26px 24px; text-align:center; background:var(--paper-dim); }
+.stub-caption{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:1.5px;
+  color:rgba(42,47,54,0.5); text-transform:uppercase; margin-bottom:10px;
+}
+.stub-id{ font-family:var(--font-mono); font-size:11px; letter-spacing:2px; color:var(--ink-text); margin-top:10px; }
+
+/* QR graphic — a static image (see images/qr-entry.png, images/qr-booth.png)
+   rather than something generated from the ticket data. */
+.qr-box{
+  display:flex; justify-content:center; align-items:center;
+  padding:8px; background:var(--paper); border-radius:6px;
+  width:160px; height:160px; margin:0 auto;
+}
+.qr-box .qr-img{ width:100%; height:100%; object-fit:contain; }
