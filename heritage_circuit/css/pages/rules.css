@@ -1,0 +1,50 @@
+/* RULES / TERMS PAGE — modal-style agreement screen. */
+
+.page{ display:flex; flex-direction:column; padding-bottom:96px; }
+
+.rules-header{ padding:26px 24px 10px; text-align:center; }
+.rules-header .eyebrow{
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  letter-spacing:2px;
+  color:var(--brass);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.rules-header h1{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:26px;
+  color:var(--ink);
+}
+
+.sections{ padding:10px 24px 20px; }
+.rule-section{ padding:18px 0; border-bottom:1px solid rgba(42,47,54,0.12); }
+.rule-section:first-child{ padding-top:6px; }
+.rule-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:17px;
+  color:var(--ink);
+  text-align:center;
+  margin-bottom:10px;
+}
+.rule-body p{
+  font-size:13.3px;
+  line-height:1.65;
+  color:var(--ink-text);
+  margin-bottom:8px;
+}
+.rule-body p:last-child{ margin-bottom:0; }
+
+.agree-bar{
+  position:fixed;
+  bottom:0; left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:460px;
+  background:var(--paper);
+  border-top:1px solid rgba(42,47,54,0.14);
+  padding:16px 24px 22px;
+  z-index:20;
+}

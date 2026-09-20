@@ -1,0 +1,182 @@
+/* PRODUCT PAGE — shared by all three costume pages (Nhat Binh / Giao Linh / Ngu Than).
+   Multi-view tap-through pattern: a home view + one hidden view per field,
+   toggled by js/pages/product.js. */
+
+/* PRODUCT PAGE — shared by all three costume pages (Nhat Binh / Giao Linh / Ngu Than).
+   Multi-view tap-through pattern: a home view + one hidden view per field,
+   toggled by js/pages/product.js.
+   Colors mostly follow each page's own --product-accent / --product-hero-bg
+   (set inline per page) instead of the generic --brass/--badge tokens, so
+   each costume's info pages feel visually tied to that costume. The gold
+   "Heritage Circuit" topbar label is the one exception, kept universally
+   gold for brand consistency across every page in the site. */
+
+.view{
+  position:absolute; inset:0;
+  overflow-y:scroll; overflow-x:hidden;
+  scrollbar-width:none;
+  background:var(--paper);
+  transition:transform 0.38s cubic-bezier(.32,.72,0,1);
+}
+.view::-webkit-scrollbar{ display:none; }
+.view-home{ z-index:10; position:relative; min-height:100vh; }
+.view-detail{ z-index:20; transform:translateX(100%); pointer-events:none; min-height:100vh; }
+.view-detail.active{ transform:translateX(0); pointer-events:auto; }
+
+/* topbar floats transparently over the hero image/color, rather than
+   sitting as its own solid bar above it — only the arrow + wordmark show. */
+.view-home > .topbar{
+  position:absolute; top:0; left:0; right:0; z-index:5;
+  background:transparent;
+}
+.view-home > .topbar .back-btn .arrow{ font-size:30px; }
+
+/* detail-topbar (Info/Stock/Material/Size sub-views) keeps its solid
+   product-colored bar as before — only the home view's topbar floats. */
+.detail-topbar{
+  background:var(--product-hero-bg, var(--ink));
+}
+
+.spine{
+  position:absolute; top:0; left:0; bottom:0; width:9px; z-index:30;
+  background:repeating-linear-gradient(
+    to bottom,
+    var(--brass) 0 6px,
+    var(--ink) 6px 16px,
+    var(--product-accent, var(--brass)) 16px 26px,
+    var(--paper) 26px 32px
+  );
+  box-shadow:2px 0 5px rgba(0,0,0,0.15);
+}
+
+/* hero */
+.hero{
+  position:relative;
+  background:var(--product-hero-bg, var(--ink));
+  padding:70px 24px 34px 34px;
+  color:var(--paper);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(201,162,77,0.20), transparent 55%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 9px);
+  pointer-events:none;
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:42px;
+  letter-spacing:0.5px;
+  line-height:1.05;
+  color:#f6f2e6;
+}
+.hero .viet{
+  font-family:var(--font-body);
+  font-size:15px;
+  color:var(--brass);
+  margin-top:8px;
+  letter-spacing:0.5px;
+}
+.hero .sub{
+  font-style:italic;
+  font-size:14px;
+  color:#d9dee3;
+  margin-top:12px;
+  max-width:280px;
+  line-height:1.6;
+}
+
+/* nav list */
+.nav-list{ padding:26px 20px 24px 32px; }
+.nav-hint{
+  font-family:var(--font-mono);
+  font-size:10.5px; letter-spacing:1.5px;
+  color:var(--ink); margin-bottom:12px; text-transform:uppercase;
+}
+.nav-item{
+  display:flex; align-items:center; gap:14px; width:100%;
+  background:var(--card);
+  border:1px solid rgba(42,47,54,0.14);
+  border-top:3px solid var(--product-accent, var(--brass));
+  border-radius:3px;
+  padding:20px 16px; margin-bottom:16px;
+  cursor:pointer; text-align:left; font-family:inherit;
+  box-shadow:0 3px 0 rgba(42,47,54,0.06);
+  transition:transform 0.15s ease;
+}
+.nav-item:active{ transform:scale(0.98); }
+.nav-thumb{
+  flex:0 0 56px; width:56px; height:56px; border-radius:3px;
+  background:var(--paper-dim); display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(42,47,54,0.1); overflow:hidden;
+}
+.nav-thumb svg{ width:100%; height:100%; }
+.nav-thumb img{ width:100%; height:100%; object-fit:cover; }
+.nav-text{ flex:1; min-width:0; }
+.nav-title{ font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--ink); }
+.nav-preview{ font-size:11.5px; color:rgba(42,47,54,0.6); font-family:var(--font-mono); margin-top:3px; }
+.nav-chevron{ font-family:var(--font-mono); color:var(--product-accent, var(--badge)); font-size:18px; }
+
+/* detail pages */
+.detail-topbar{
+  position:sticky; top:0; z-index:15;
+  padding:22px 20px; display:flex; align-items:center; gap:12px;
+}
+.detail-hero-media{
+  background:var(--paper-dim);
+  display:flex; justify-content:center;
+  border-bottom:1px solid rgba(42,47,54,0.08);
+  overflow:hidden;
+}
+.detail-hero-media img{ width:100%; display:block; object-fit:cover; object-position:bottom center; max-height:420px; }
+
+.detail-body{ padding:22px 26px 40px; }
+.detail-title{ font-family:var(--font-display); font-weight:700; font-size:30px; color:var(--ink); margin-bottom:14px; }
+.detail-body p{ font-size:14px; line-height:1.68; color:var(--ink-text); margin-bottom:12px; }
+.fact-list{ margin-top:4px; }
+.fact-list li{
+  font-size:13.5px; line-height:1.6; color:var(--ink-text);
+  padding-left:16px; position:relative; margin-bottom:11px; list-style:none;
+}
+.fact-list li::before{ content:"·"; font-size:20px; position:absolute; left:0; top:-3px; color:var(--product-accent, var(--badge)); }
+
+/* text card — stock, material, size */
+.text-card{ padding:22px 20px; margin-top:4px; }
+.text-card.card-brass-top{ border-top-color:var(--product-accent, var(--brass)); }
+.text-card + .text-card{ margin-top:16px; }
+.text-card-label{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:2px;
+  color:var(--product-accent, var(--badge)); text-transform:uppercase; margin-bottom:10px;
+}
+
+.stock-row{ display:flex; align-items:center; gap:10px; font-family:var(--font-mono); margin-bottom:10px;}
+.stock-dot{ width:9px; height:9px; border-radius:50%; background:var(--product-accent, var(--brass)); }
+.stock-count{ font-size:26px; font-weight:600; color:var(--ink); }
+.size-stock{ display:flex; gap:6px; margin-top:12px; flex-wrap:wrap; }
+.size-chip{
+  font-family:var(--font-mono); font-size:11.5px; padding:5px 10px;
+  border:1px solid var(--ink); border-radius:20px; color:var(--ink);
+}
+.size-chip.low{ border-color:var(--product-accent, var(--badge)); color:var(--product-accent, var(--badge)); background:rgba(138,59,63,0.06); }
+
+.swatch-legend{ display:flex; gap:14px; margin-top:12px; flex-wrap:wrap; }
+.swatch-legend div{ display:flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; color:var(--ink-text); }
+.swatch-dot{ width:10px; height:10px; border-radius:2px; }
+
+.size-table{ width:100%; border-collapse:collapse; margin-top:14px; font-family:var(--font-mono); font-size:11.5px; }
+.size-table th{ text-align:left; color:var(--paper); background:var(--product-hero-bg, var(--ink)); padding:7px 8px; font-weight:500; letter-spacing:0.5px; }
+.size-table td{ padding:7px 8px; border-bottom:1px solid rgba(42,47,54,0.1); color:var(--ink-text); }
+.size-table tr:nth-child(even) td{ background:rgba(42,47,54,0.05); }
+
+.mats-img {
+  max-width: 65%; 
+  margin-left: auto;
+  margin-right: auto;
+  height: auto; 
+  display: block; 
+  margin-bottom: 1rem;
+  margin-top: 1rem; 
+}

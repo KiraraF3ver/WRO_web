@@ -1,0 +1,47 @@
+/* LOGIN PAGE — layout specific to login.html. Tokens/components come from theme.css. */
+
+.page{ display:flex; flex-direction:column; }
+
+.brand{ text-align:center; padding:70px 24px 30px; }
+.brand svg{ width:40px; height:40px; margin:0 auto 12px; display:block; }
+.brand .word{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--brass);
+  text-transform:uppercase;
+}
+.brand h1{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:30px;
+  color:var(--ink);
+  margin-top:10px;
+}
+.brand .quote{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:13.5px;
+  color:rgba(42,47,54,0.6);
+  margin-top:8px;
+}
+
+.form-wrap{ flex:1; padding:10px 32px 40px; }
+
+.row-between{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:24px;
+  font-family:var(--font-mono);
+  font-size:11.5px;
+}
+.remember{ display:flex; align-items:center; gap:7px; color:var(--ink); }
+.remember input{ accent-color:var(--brass); }
+.forgot{ color:var(--brass); text-decoration:none; cursor:pointer; }
+
+.alt-actions{
+  text-align:center;
+  font-family:var(--font-body);
+  font-size:13px;
+  color:var(--ink);
+}
+.alt-actions a{ color:var(--brass); font-weight:600; text-decoration:none; cursor:pointer; }

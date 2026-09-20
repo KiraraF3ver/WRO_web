@@ -1,0 +1,140 @@
+/* STORE PAGE — header with dropdown menu, image slider, wrapping product grid.
+   No pricing or cart — this is a showcase/reference page, not a shop. */
+
+.topbar{ justify-content:space-between; }
+.brand-mini{ display:flex; align-items:center; gap:8px; }
+.brand-mini svg{ width:26px; height:26px; }
+.brand-mini span{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:2.5px;
+  color:var(--paper);
+  text-transform:uppercase;
+}
+
+.menu-wrap{ position:relative; }
+.menu-btn{
+  width:42px; height:42px;
+  border-radius:50%;
+  background:rgba(245,239,224,0.12);
+  border:none;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+.menu-btn svg{ width:20px; height:20px; }
+.menu-dropdown{
+  position:absolute;
+  top:52px; right:0;
+  min-width:160px;
+  background:var(--card);
+  border:1px solid rgba(42,47,54,0.16);
+  border-radius:8px;
+  box-shadow:0 14px 30px rgba(0,0,0,0.3);
+  overflow:hidden;
+  display:none;
+  z-index:30;
+}
+.menu-dropdown.open{ display:block; }
+.menu-dropdown a{
+  display:block;
+  padding:13px 16px;
+  font-family:var(--font-mono);
+  font-size:14px;
+  letter-spacing:0.5px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid rgba(42,47,54,0.1);
+}
+.menu-dropdown a:last-child{ border-bottom:none; }
+.menu-dropdown a:active{ background:var(--paper-dim); }
+
+.header p{
+  font-style:italic;
+  font-size:13.5px;
+  color:rgba(42,47,54,0.65);
+  margin-top:8px;
+  max-width:320px;
+  line-height:1.5;
+}
+
+/* slider */
+.slider-wrap{ padding:6px 20px 8px; }
+.slider{
+  position:relative;
+  width:100%;
+  height:340px;
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--paper-dim);
+  box-shadow:0 12px 30px rgba(35,39,53,0.25);
+}
+.slide{ position:absolute; inset:0; opacity:0; transition:opacity 0.7s ease; }
+.slide.active{ opacity:1; }
+.slide img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.slide-scrim{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:18px 18px 16px;
+  background:linear-gradient(to top, rgba(35,39,53,0.85), transparent);
+  color:var(--paper);
+}
+.slide-scrim .name{ font-family:var(--font-display); font-weight:700; font-size:22px; }
+.slide-scrim .category{ font-family:var(--font-mono); font-size:12.5px; color:var(--brass); margin-top:4px; }
+
+.slide-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:34px; height:34px; border-radius:50%;
+  background:rgba(35,39,53,0.5);
+  border:none; color:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:16px;
+  z-index:3;
+}
+.slide-arrow.prev{ left:12px; }
+.slide-arrow.next{ right:12px; }
+
+.dots{ display:flex; justify-content:center; gap:7px; margin-top:14px; }
+.dot{
+  width:7px; height:7px; border-radius:50%;
+  background:rgba(35,39,53,0.25);
+  cursor:pointer; border:none; padding:0;
+  transition:background 0.2s ease, width 0.2s ease;
+}
+.dot.active{ background:var(--brass); width:20px; border-radius:4px; }
+
+/* collection grid */
+.collection{ padding:26px 20px 30px; }
+.collection h2{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:30px;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+.collection-sub{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:15px;
+  color:rgba(42,47,54,0.55);
+  margin-top:-6px;
+  margin-bottom:16px;
+}
+.collection-row{ display:flex; flex-wrap:wrap; gap:12px; }
+.costume-card{
+  display:flex;
+  flex-direction:column;
+  flex:1 1 calc(50% - 6px);
+  min-width:140px;
+  background:var(--card);
+  border:1px solid rgba(42,47,54,0.12);
+  border-top:3px solid var(--brass);
+  border-radius:4px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:transform 0.15s ease;
+}
+.costume-card:active{ transform:scale(0.98); }
+.costume-thumb{ width:100%; aspect-ratio:1/1; overflow:hidden; }
+.costume-thumb img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+.costume-info{ padding:10px 12px 12px; }
+.costume-name{ font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--ink); line-height:1.15; }
+.costume-tag{ font-family:var(--font-mono); font-size:10px; color:rgba(42,47,54,0.6); margin-top:4px; line-height:1.4; }

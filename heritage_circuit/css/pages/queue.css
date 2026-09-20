@@ -1,0 +1,118 @@
+/* QUEUE PAGE — three-step flow: register -> choose an empty booth ->
+   generate a booth entry ticket. Steps 2 and 3 stay hidden until the
+   previous step is complete (see js/pages/queue.js). */
+
+.step-wrap{ padding:22px 24px 6px; }
+.step-wrap + .step-wrap{ padding-top:16px; }
+
+.step-label{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px;
+  color:var(--badge); text-transform:uppercase; margin-bottom:10px;
+}
+.step-num{
+  width:18px; height:18px; border-radius:50%;
+  background:var(--badge); color:var(--paper);
+  font-size:10px; display:flex; align-items:center; justify-content:center;
+}
+
+/* VR experience intro */
+.vr-intro{ padding:22px 24px 8px; text-align:center; }
+.vr-image{
+  width:100%;
+  max-width:340px;
+  aspect-ratio:4 / 3;
+  margin:0 auto 18px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(35,39,53,0.2);
+}
+.vr-image img{ width:100%; height:100%; object-fit:cover; display:block; }
+.vr-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:30px;
+  color:var(--ink);
+  margin-bottom:10px;
+}
+.vr-text{
+  font-family:var(--font-body);
+  font-size:13.5px;
+  line-height:1.5;
+  color:var(--ink-text);
+  max-width:400px;
+  margin: auto;
+}
+
+/* step 1 — register */
+.register-card{ padding:18px 20px; text-align:center; }
+.register-card p{
+  font-family:var(--font-body); font-size:13px; color:var(--ink-text);
+  margin-bottom:14px; line-height:1.5;
+}
+.register-card .btn{ margin:0 auto; }
+
+/* once registered, the register card collapses into a compact status line */
+.register-card.done{ text-align:left; padding:14px 18px; }
+.register-card.done .register-status{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-size:12.5px; color:var(--ink);
+}
+.register-card.done .register-dot{ width:8px; height:8px; border-radius:50%; background:var(--available); }
+
+/* queue position list, shown once registered */
+.queue-list{ max-height:180px; overflow-y:auto; margin-top:12px; }
+.queue-row{
+  display:flex; align-items:center; gap:10px; padding:8px 0;
+  border-bottom:1px solid rgba(42,47,54,0.08);
+  font-family:var(--font-mono); font-size:12px;
+}
+.queue-row:last-child{ border-bottom:none; }
+.queue-pos{ flex:0 0 22px; color:var(--brass); font-weight:600; }
+.queue-user{ flex:1; color:var(--ink-text); }
+.queue-time{ color:rgba(42,47,54,0.55); }
+.queue-row.is-you{ background:rgba(201,162,77,0.12); border-radius:4px; padding-left:8px; padding-right:8px; margin:0 -8px; }
+.queue-row.is-you .queue-user{ color:var(--badge); font-weight:600; }
+
+/* step 2 — booth grid */
+.booth-section{ display:none; }
+.booth-section.show{ display:block; }
+
+.booth-header{ padding:4px 0 4px; text-align:center; }
+.booth-header h2{ font-family:var(--font-display); font-weight:700; font-size:19px; color:var(--ink); }
+.booth-header p{ font-family:var(--font-body); font-style:italic; font-size:12.5px; color:rgba(42,47,54,0.55); margin-top:4px; }
+
+.legend{ display:flex; gap:18px; justify-content:center; padding:14px 0 6px; font-family:var(--font-mono); font-size:11px; color:var(--ink-text); }
+.legend div{ display:flex; align-items:center; gap:7px; }
+.legend-dot{ width:12px; height:12px; border-radius:3px; }
+
+.booth-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:16px 0 8px; }
+
+.booth{
+  height:110px; border-radius:8px; padding:14px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  background:var(--available); border:1px solid var(--available);
+  transition:transform 0.15s ease;
+}
+.booth.available{ cursor:pointer; }
+.booth.available:active{ transform:scale(0.97); }
+.booth .booth-num{ font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--ink); line-height:1; }
+.booth .booth-name{ font-family:var(--font-display); font-weight:600; font-size:14.5px; color:var(--ink); margin-top:3px; }
+.booth .booth-purpose{
+  font-family:var(--font-mono); font-size:9.5px; letter-spacing:0.5px;
+  color:rgba(35,39,53,0.65); margin-top:5px; text-transform:uppercase;
+}
+.booth.occupied{ background:var(--badge); border-color:var(--badge); cursor:not-allowed; }
+.booth.occupied .booth-num,
+.booth.occupied .booth-name{ color:var(--paper); }
+.booth.occupied .booth-purpose{ color:rgba(245,239,224,0.65); }
+
+.booth.selected{ background:var(--brass); border-color:var(--brass); box-shadow:0 0 0 3px rgba(201,162,77,0.35); }
+.booth.selected .booth-num,
+.booth.selected .booth-name{ color:var(--ink); }
+
+/* step 3 — generate ticket */
+.generate-section{ display:none; padding:16px 24px 30px; text-align:center; }
+.generate-section.show{ display:block; }
+.generate-section p{ font-family:var(--font-body); font-style:italic; font-size:12.5px; color:rgba(42,47,54,0.55); margin-bottom:14px; }
+.generate-section .outfit-field{ text-align:left; margin-bottom:16px; }

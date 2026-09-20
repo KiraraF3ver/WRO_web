@@ -1,0 +1,62 @@
+/* GENERATE TICKET PAGE — merges outfit selection (Outfit/Size/Color/Form)
+   and the resulting QR ticket into a single scrollable page, rather than
+   splitting them across two pages. Reached from queue.html after an
+   empty booth has been chosen. */
+
+.outfit-select-wrap{ padding:18px 24px 4px; }
+
+.config-split{ display:flex; gap:16px; padding:20px 24px 10px; align-items:flex-start; }
+
+.preview-col{ flex:0 0 40%; }
+.preview-frame{
+  width:100%; aspect-ratio:3 / 4; border-radius:8px; overflow:hidden;
+  background:var(--paper-dim); border:1px solid rgba(42,47,54,0.14);
+  box-shadow:0 10px 26px rgba(35,39,53,0.2);
+  display:flex; align-items:center; justify-content:center;
+}
+.preview-frame img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:none; }
+.preview-frame.has-image img{ display:block; }
+.preview-placeholder{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:1px;
+  color:rgba(42,47,54,0.4); text-align:center; padding:0 14px;
+}
+.preview-frame.has-image .preview-placeholder{ display:none; }
+.preview-caption{
+  font-family:var(--font-display); font-weight:700; font-size:14.5px;
+  color:var(--ink); text-align:center; margin-top:10px; line-height:1.2;
+}
+.preview-frame.preview-frame-landscape{
+  aspect-ratio:16 / 9;
+  margin-top:14px;
+}
+
+.options-col{ flex:1; min-width:0; }
+.option-group{ margin-bottom:16px; }
+.option-group:last-child{ margin-bottom:0; }
+
+.swatch-preview{
+  display:flex; align-items:center; gap:8px; margin-top:8px;
+  font-family:var(--font-mono); font-size:10.5px; color:var(--ink-text);
+}
+.swatch-dot{ width:14px; height:14px; border-radius:3px; border:1px solid rgba(42,47,54,0.2); }
+
+/* summary */
+.summary-wrap{ padding:6px 24px 16px; }
+.summary-card{ padding:16px 18px; font-family:var(--font-mono); font-size:12px; color:var(--ink-text); line-height:1.8; }
+.summary-card .row{ display:flex; justify-content:space-between; }
+.summary-card b{ color:var(--ink); }
+.summary-card .unset{ color:rgba(42,47,54,0.4); }
+
+.generate-wrap{ padding:0 24px 8px; }
+
+
+.qr-wrap{ padding:20px 24px 40px; }
+.qr-card{ padding:22px 20px 20px; text-align:center; display:none; }
+.qr-card.show{ display:block; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(8px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.qr-label{ font-family:var(--font-mono); font-size:10px; letter-spacing:2px; color:var(--brass); text-transform:uppercase; margin-bottom:14px; }
+.qr-id{ font-family:var(--font-mono); font-size:12px; letter-spacing:2px; color:var(--ink); margin-top:14px; }
+.qr-desc{ font-family:var(--font-body); font-style:italic; font-size:11.5px; color:rgba(42,47,54,0.55); margin-top:6px; }
