@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Circuit — Booth Verification Scanner</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <link rel="stylesheet" href="booth-scanner.css">
+</head>
+<body>
+
+<div class="page-header">
+  <span class="brand">Heritage Circuit</span>
+  <span class="page-tag">Booth Scanner</span>
+</div>
+
+<div class="container">
+    <h1>Booth Check-In</h1>
+    <div class="subtitle">Verification Scanner</div>
+
+    <div id="reader"></div>
+
+    <div id="result-card" class="result-card">
+        <div class="verified-badge">✓ Reservation Verified</div>
+        <div class="data-row"><span class="data-label">Ticket ID</span>  <span id="res-id"></span></div>
+        <div class="data-row"><span class="data-label">Booth</span>      <span id="res-booth"></span></div>
+        <div class="data-row"><span class="data-label">Time Slot</span>  <span id="res-time"></span></div>
+        <div class="data-row"><span class="data-label">Outfit</span>     <span id="res-outfit"></span></div>
+        <div class="data-row"><span class="data-label">Color</span>      <span id="res-color"></span></div>
+        <div class="data-row"><span class="data-label">Form / Size</span><span id="res-form-size"></span></div>
+        <div class="data-row"><span class="data-label">Setting</span>    <span id="res-setting"></span></div>
+
+        <div id="camera-scan-container" class="camera-scan-container">
+            <div class="scan-label">CAMERA SYNC</div>
+            <div id="res-color-box" class="color-box"></div>
+        </div>
+
+        <button onclick="resetScanner()">Scan Next Guest</button>
+    </div>
+
+    <div class="footer-stamp">Heritage Circuit — Thổi Hồn Máy Móc, Thắp Sáng Di Sản</div>
+</div>
+
+<script>
+    const outfitCatalog = {
+      nhat_binh: { name: "Nhật Bình Phượng Hoàng", colors: ["Đỏ Son — Imperial Red", "Chàm — Indigo Trim", "Vàng Kim — Gold Trim"] },
+      giao_linh: { name: "Giao Lĩnh Lục Trúc",    colors: ["Lục Trà — Tea Green", "Ngà — Ivory Underlayer", "Trúc Vàng — Bamboo Gold"] },
+      ngu_than:  { name: "Ngũ Thân Vân Lam",       colors: ["Lam Sương — Dusty Blue", "Kem — Cream Underskirt", "Ngọc Trai — Pearl Trim"] }
+    };
+    const settingCatalog = { cung_dinh_hue: { name: "Cung Đình Huế" } };
+
+    let html5QrcodeScanner;
+
+    function onScanSuccess(decodedText) {
+    try {
+        html5QrcodeScanner.clear();
+        document.getElementById('reader').style.display = 'none';
+
+        const data = JSON.parse(decodedText);
+
+        const outfitName  = outfitCatalog[data.o]?.name ?? "Unknown";
+        const colorName   = outfitCatalog[data.o]?.colors[data.c] ?? "Unknown";
+        const formName    = data.f === 1 ? "Nữ" : "Nam";
+        const settingName = settingCatalog[data.st]?.name ?? "Unknown";
+
+        // Determine the box color based on outfit type
+        let scanColor = "transparent";
+        if (data.o === "nhat_binh") {
+            scanColor = "#FF0000"; // Pure Red
+        } else if (data.o === "giao_linh") {
+            scanColor = "#00FF00"; // Pure Green
+        } else if (data.o === "ngu_than") {
+            scanColor = "#0000FF"; // Pure Blue
+        }
+
+        document.getElementById('res-id').textContent        = "#" + data.i;
+        document.getElementById('res-booth').textContent     = data.b;
+        document.getElementById('res-time').textContent      = data.t;
+        document.getElementById('res-outfit').textContent    = outfitName;
+        document.getElementById('res-color').textContent     = colorName;
+        document.getElementById('res-form-size').textContent = `${formName} (Size: ${data.s})`;
+        document.getElementById('res-setting').textContent   = settingName;
+
+        // Apply the color and show the ENTIRE container
+        document.getElementById('res-color-box').style.backgroundColor = scanColor;
+        document.getElementById('camera-scan-container').classList.add('show');
+        document.getElementById('result-card').classList.add('show');
+    } catch (e) {
+        alert("Invalid QR Code. Please scan a valid Heritage Circuit ticket.");
+        resetScanner();
+        }
+    }
+
+    function resetScanner() {
+    document.getElementById('result-card').classList.remove('show');
+    document.getElementById('camera-scan-container').classList.remove('show'); // Hide the new container
+    document.getElementById('reader').style.display = 'block';
+    startScanner();
+}
+
+    function startScanner() {
+        html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader",
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            false
+        );
+        html5QrcodeScanner.render(onScanSuccess);
+    }
+
+    startScanner();
+</script>
+</body>
+</html>
